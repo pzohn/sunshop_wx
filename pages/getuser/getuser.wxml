@@ -1,0 +1,5 @@
+<view class="container">
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+   点击授权使用新太阳悦生活
+  </button>
+</view>

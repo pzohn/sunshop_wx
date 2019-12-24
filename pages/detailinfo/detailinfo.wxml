@@ -1,0 +1,5 @@
+<scroll-view>
+    <block wx:for="{{classInfo}}" wx:key="classInfo" >
+      <image class="img" src="{{item}}" mode="widthFix"></image>
+    </block>
+</scroll-view>
