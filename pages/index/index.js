@@ -30,6 +30,7 @@ Page({
 
   onShow: function () {
     this.initCert();
+    this.initData1();
   },
 
   goto(ev) {
@@ -77,16 +78,6 @@ Page({
       },
     })
 
-    var loginCode = wx.getStorageSync('phone');
-    var loginId = wx.getStorageSync('login_id');
-    if (loginCode == "" || loginId == "") {
-      app.globalData.loginFlag = false;
-    } else {
-      app.globalData.loginFlag = true;
-      app.globalData.phone = loginCode;
-      app.globalData.login_id = loginId;
-    }
-    var page = this;
     this.initData1();
   },
 
@@ -143,6 +134,11 @@ Page({
       }
     })
   },
+
+  onPullDownRefresh: function () {
+    this.initData1();
+  },
+
 
   recommendGood: function (e) {
     var id = e.currentTarget.id;
