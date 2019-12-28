@@ -88,7 +88,7 @@ Component({
       invite: '学海无涯苦作舟',
       nickInvite: '蹦萨卡拉卡',
       bpbMini: '新太阳悦生活_欢乐购',
-      clickToMini: '(识别二维码分享)',
+      clickToMini: '(长按识别二维码)',
       awardContent: '我在北方的寒夜里四季如春'
     },
     awardStr: '你在南方的艳阳里',

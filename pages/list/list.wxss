@@ -53,6 +53,19 @@
   text-align: center;
   color: white;
 }
+
+/* .btn{
+  right: 10rpx;
+  width: 24%;
+  background:url('https://www.gfcamps.cn/sun/goumai.png') no-repeat center center;
+  background-size: cover;
+  height: 28px;
+  border-radius: 25rpx;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255,255,255,0);
+} */
+
 .btn1{
   right: 10rpx;
   width: 100px;
