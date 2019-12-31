@@ -31,8 +31,8 @@
         <text style='color:{{item.color}}'>订单状态：{{item.status}}</text>
         <button class='btn' data-id="{{item.trade_id}}"  bindtap='pay' hidden='{{item.payhide}}'>继续支付</button>
         <button class='btn1' data-id="{{item.trade_id}}"  bindtap='delete' hidden='{{item.deletehide}}'>关闭订单</button>
-        <button class='btn1' data-id="{{item.trade_id}}"  bindtap='deleteRefund' hidden='{{item.refundhide}}'>关闭退款</button>
-        <button class='btn' data-id="{{item.trade_id}}"  bindtap='refund' hidden='{{item.refund}}'>退款</button>       
+        <button class='btn2' data-id="{{item.trade_id}}"  bindtap='deleteRefund' hidden='{{item.refundhide}}'>关闭退款</button>
+        <button class='btn3' data-id="{{item.trade_id}}"  bindtap='refund' hidden='{{item.refund}}'>提交退款</button>       
     </view>
   </view>
 </view>
