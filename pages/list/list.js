@@ -32,8 +32,7 @@ Page({
     } else if (id == 5) {
       url = 'https://www.hattonstar.com/getOrderRefundForPerson'
       page.setData({itemOnFlag:false})
-    }
-    console.log(id)
+    } 
     wx.request({
       url: url,
       data: {
