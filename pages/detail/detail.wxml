@@ -120,3 +120,23 @@
     <button class="button-ok" bindtap="buttonOk">确定</button>
    </view>
 </view>
+
+
+<!--弹窗-->
+ 
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+<view class="modal-title">请填写基本信息</view>
+<view class="modal-content">
+<view class="modal-input">
+<input placeholder-class="input-holder" type="number" maxlength="4" bindinput="inputChangeName" class="input" placeholder="姓名"></input>
+</view>
+<view class="modal-input">
+<input placeholder-class="input-holder" type="number" maxlength="11" bindinput="inputChangePhone" class="input" placeholder="电话"></input>
+</view>
+</view>
+<view class="modal-footer">
+<view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+<view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+</view>
+</view>
