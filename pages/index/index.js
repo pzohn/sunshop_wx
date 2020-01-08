@@ -102,6 +102,10 @@ Page({
           var object = new Object();
           object.url = 'https://www.hattonstar.com/storage/' + res.data.good[i].title_pic;
           object.title = res.data.good[i].name;
+          if (object.title.length > 8) {
+            object.title = object.title.substring(0, 7)
+            object.title += "..."
+          }
           object.price = res.data.good[i].price + '元';
           object.id = res.data.good[i].id;
           recommend[i] = object;
@@ -111,6 +115,10 @@ Page({
           var object = new Object();
           object.url = 'https://www.hattonstar.com/storage/' + res.data.week[i].title_pic;
           object.title = res.data.week[i].name;
+          if (object.title.length > 8) {
+            object.title = object.title.substring(0, 7)
+            object.title += "..."
+          }
           object.price = res.data.week[i].price + '元';
           object.id = res.data.week[i].id;
           hotrec[i] = object;
