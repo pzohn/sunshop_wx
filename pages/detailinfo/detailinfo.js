@@ -9,6 +9,19 @@ Page({
     this.initData(id);
   },
 
+  home() {
+    wx.switchTab({
+      url: app.globalData.index_style,
+    })
+  },
+
+  poster() {
+    var page = this;
+    wx.navigateTo({
+      url: '../sharepage/sharepage?id=' + page.data.detail_id,
+    })
+  },
+
   initData: function (id) {
     var page = this;
     wx.request({

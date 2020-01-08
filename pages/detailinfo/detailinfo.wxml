@@ -3,3 +3,13 @@
       <image class="img" src="{{item}}" mode="widthFix"></image>
     </block>
 </scroll-view>
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <button  class='button-green' bindtap="home" formType="submit">
+    <text>主页</text>
+  </button>
+  <button  class='button-red' bindtap="poster" formType="submit">
+    <text>分享</text>
+  </button>
+</view>
