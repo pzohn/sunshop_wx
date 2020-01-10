@@ -21,6 +21,10 @@ Page({
     var size = this.setCanvasSize();//动态设置画布大小
     this.setData({ id: options.id});
     var initUrl = 'https://www.hattonstar.com/e?shareid=' + app.globalData.wx_id + '&id=' + options.id;
+    if (app.globalData.notice_flag == 1) {
+      console.log(options.id)
+      initUrl = 'https://www.hattonstar.com/ee?shareid=' + app.globalData.wx_id + '&id=' + options.id;
+    }
     this.createQrCode(initUrl, "mycanvas", size.w, size.h);
   },
 

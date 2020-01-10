@@ -314,6 +314,7 @@ Page({
 
   poster() {
     var page = this;
+    app.globalData.notice_flag = 0;
     wx.navigateTo({
       url: '../sharepage/sharepage?id=' + page.data.detail_id,
     })
