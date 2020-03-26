@@ -110,7 +110,7 @@ Page({
 
   onShareAppMessage: function () {
     return {
-      title: '新太阳悦生活_欢乐购',
+      title: '悦享生活_欢乐购',
       path: '/pages/detail/detail?shareid=' + app.globalData.wx_id + '&id=' + this.data.id,
       imageUrl: app.globalData.post_url,
       success: function (res) {
