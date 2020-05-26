@@ -464,7 +464,7 @@ Page({
       method: 'POST',
       success: function (res) {
         wx.showToast({
-          title: '提交成功',
+          title: '请继续提交订单，完成支付',
           icon: 'success',
           duration: 2000
         })
