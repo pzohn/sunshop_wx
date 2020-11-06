@@ -7,14 +7,14 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     DFrames: {
       layOut: [
-        { imgUrl: "https://www.gfcamps.cn/sun/xsq.png", text: "限时抢", route: "../indexdetail/indexdetail?id=7" },
-        { imgUrl: "https://www.gfcamps.cn/sun/1yg.png", text: "1元购", route: "../indexdetail/indexdetail?id=8" },
-        { imgUrl: "https://www.gfcamps.cn/sun/xptj.png", text: "新品特价", route: "../indexdetail/indexdetail?id=9" },
-        { imgUrl: "https://www.gfcamps.cn/sun/ggzx.png", text: "公告中心", route: "../indexdetail/indexdetail?id=14" },
-        { imgUrl: "https://www.gfcamps.cn/sun/jyjx.png", text: "教育教学", route: "../indexdetail/indexdetail?id=10" },
-        { imgUrl: "https://www.gfcamps.cn/sun/jyzb.png", text: "教育周边", route: "../indexdetail/indexdetail?id=11" },
-        { imgUrl: "https://www.gfcamps.cn/sun/xsnc.png", text: "绿色农场", route: "../indexdetail/indexdetail?id=12" },
-        { imgUrl: "https://www.gfcamps.cn/sun/jkys.png", text: "健康养生", route: "../indexdetail/indexdetail?id=13" },
+        { imgUrl: "https://www.hattonstar.com/sun/xsq.png", text: "限时抢", route: "../indexdetail/indexdetail?id=7" },
+        { imgUrl: "https://www.hattonstar.com/sun/1yg.png", text: "1元购", route: "../indexdetail/indexdetail?id=8" },
+        { imgUrl: "https://www.hattonstar.com/sun/xptj.png", text: "新品特价", route: "../indexdetail/indexdetail?id=9" },
+        { imgUrl: "https://www.hattonstar.com/sun/ggzx.png", text: "公告中心", route: "../indexdetail/indexdetail?id=14" },
+        { imgUrl: "https://www.hattonstar.com/sun/jyjx.png", text: "教育教学", route: "../indexdetail/indexdetail?id=10" },
+        { imgUrl: "https://www.hattonstar.com/sun/jyzb.png", text: "教育周边", route: "../indexdetail/indexdetail?id=11" },
+        { imgUrl: "https://www.hattonstar.com/sun/xsnc.png", text: "绿色农场", route: "../indexdetail/indexdetail?id=12" },
+        { imgUrl: "https://www.hattonstar.com/sun/jkys.png", text: "健康养生", route: "../indexdetail/indexdetail?id=13" },
       ]
     },
     navScrollLeft: 0,

@@ -185,7 +185,7 @@ color: #222;
 
 .bztj{
   width: 60%;
-  background:url('https://www.gfcamps.cn/sun/zztj.png') no-repeat center center;
+  background:url('https://www.hattonstar.com/sun/zztj.png') no-repeat center center;
   background-size: cover;
   height: 50px;
   border-radius: 25rpx;
@@ -197,7 +197,7 @@ color: #222;
 
 .rxhw{
   width: 60%;
-  background:url('https://www.gfcamps.cn/sun/rxhw.png') no-repeat center center;
+  background:url('https://www.hattonstar.com/sun/rxhw.png') no-repeat center center;
   background-size: cover;
   height: 50px;
   border-radius: 25rpx;
