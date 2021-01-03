@@ -26,7 +26,9 @@ Page({
     order_message: '', //订单留言
     cart_ids: [], // 购物车商品id
     type:'',
-    fixed_address_flag:false
+    fixed_address_flag:false,
+    vip_flag:0,
+    vip_price:0
   },
   //选择地址
   bindaddress: function () {
@@ -121,7 +123,8 @@ Page({
               share_id: app.globalData.share_id,
               use_royalty: page.data.royalty_price,
               total_fee:page.data.all_total_price,
-              shop_id: app.globalData.shop_id
+              shop_id: app.globalData.shop_id,
+              vip_flag:app.globalData.vip_flag
             },
             method: 'POST',
             success: function (res) {
@@ -178,7 +181,8 @@ Page({
         address_id: page.data.address_id,
         name: wxUserInfo.nickName,
         share_id: app.globalData.share_id,
-        use_royalty: page.data.royalty_price
+        use_royalty: page.data.royalty_price,
+        vip_flag:app.globalData.vip_flag
       },
       method: 'POST',
       success: function (res) {
@@ -224,7 +228,8 @@ Page({
         address_id: page.data.address_id,
         name: wxUserInfo.nickName,
         share_id: app.globalData.share_id,
-        use_royalty: page.data.royalty_price
+        use_royalty: page.data.royalty_price,
+        vip_flag:app.globalData.vip_flag
       },
       method: 'POST',
       success: function (res) {
@@ -277,7 +282,8 @@ Page({
               name: wxUserInfo.nickName,
               share_id: app.globalData.share_id,
               use_royalty: page.data.royalty_price,
-              shop_id: app.globalData.shop_id
+              shop_id: app.globalData.shop_id,
+              vip_flag:app.globalData.vip_flag
             },
             method: 'POST',
             success: function (res) {
@@ -327,6 +333,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({vip_flag:app.globalData.vip_flag})
     var type = options.type;
     var id = options.id;
     var num = options.num;
@@ -349,17 +356,24 @@ Page({
         object.price = res.data.charge;
         object.image = 'https://www.hattonstar.com/storage/' + res.data.title_pic;
         object.count = page.data.goods_count;
+        object.vip_price = res.data.vip_price;
         goods_info[0] = object;
         var total_price = object.price * page.data.goods_count;
+        var vip_price = object.vip_price * page.data.goods_count;
+        var real_total_price = total_price;
+        if (page.data.vip_flag == 1){
+          real_total_price = vip_price;
+        }
         var royalty_price = page.data.royalty_price;
-        var all_total_price = page.numberFormat(total_price - royalty_price);
+        var all_total_price = page.numberFormat(real_total_price - royalty_price);
         if (all_total_price <= 0){
-          royalty_price = total_price;
+          royalty_price = real_total_price;
           all_total_price = 0;
         }
         page.setData({
           goods_info: goods_info,
           total_price: page.numberFormat(total_price),
+          vip_price: page.numberFormat(vip_price),
           royalty_price: page.numberFormat(royalty_price),
           all_total_price: page.numberFormat(all_total_price)
         });
@@ -459,27 +473,35 @@ Page({
     var page = this;
     var goods_info = [];
     var total_price = 0;
+    var vip_price = 0;
     for (var index in app.globalData.certlist){
       var object = new Object();
       object.title = app.globalData.certlist[index].title;
       object.price = app.globalData.certlist[index].price;
+      object.vip_price = app.globalData.certlist[index].vip_price;
       object.image = app.globalData.certlist[index].image;
       object.count = app.globalData.certlist[index].num;
       goods_info[index] = object;
       total_price += object.price * object.count;
+      vip_price += object.vip_price * object.count;
+    }
+    var real_total_price = total_price;
+    if (page.data.vip_flag == 1){
+      real_total_price = vip_price;
     }
     var royalty_price = page.data.royalty_price;
-    var all_total_price = page.numberFormat(total_price - royalty_price);
+    var all_total_price = page.numberFormat(real_total_price - royalty_price);
     if (all_total_price <= 0) {
-      royalty_price = total_price;
+      royalty_price = real_total_price;
       all_total_price = 0;
     }
     if (app.globalData.certlist.length) {
       page.setData({
         goods_info: goods_info,
-        total_price: total_price,
-        royalty_price: royalty_price,
-        all_total_price: all_total_price
+        total_price: page.numberFormat(total_price),
+        vip_price: page.numberFormat(vip_price),
+        royalty_price: page.numberFormat(royalty_price),
+        all_total_price: page.numberFormat(all_total_price)
       });
     }
     if (app.globalData.leasing_id) {

@@ -15,6 +15,7 @@ Page({
     totalPrice: 0, // 总价，初始为0
     // 全选状态
     selectAllStatus: true, // 全选状态，默认全选
+    vip_flag:0
   },
 
   onLoad: function (options) {
@@ -37,6 +38,7 @@ Page({
           object.shoppingid = res.data[i].shoppingid;
           object.image = 'https://www.hattonstar.com/storage/' + res.data[i].title_pic;
           object.price = res.data[i].price;
+          object.vip_price = res.data[i].vip_price;
           object.pro_name = '默认规格';
           object.num = res.data[i].count;
           object.selected = true;
@@ -69,6 +71,7 @@ Page({
   },
 
   onShow() {
+    this.setData({vip_flag:app.globalData.vip_flag})
     this.setData({
       edit_show: "none",
       edit_name: "编辑",
@@ -428,7 +431,11 @@ Page({
       // 判断选中计算价格
       if (list[i].selected) {
         // 所有价格加起来 count_money
-        total += list[i].num * list[i].price;
+        if (this.data.vip_flag == 1){
+          total += list[i].num * list[i].vip_price;
+        }else{
+          total += list[i].num * list[i].price;
+        }
         total_num += list[i].num
       }
     }

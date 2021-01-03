@@ -244,6 +244,12 @@ view .text:first-of-type {
   left: 250rpx;
   margin: 1rpx;
 }
+.vip-price {
+  color: orange;
+  position: relative;
+  left: 250rpx;
+  margin: 1rpx;
+}
 .sku-title {
   position: relative;
   left: 250rpx;

@@ -25,6 +25,7 @@
           <image class='collert_img'src='../../images/collect.png'></image> 收藏</label> -->
         <!-- 价格 -->
         <text class="list_price">￥{{item.price}}</text>
+        <text class="list_vip_price">Vip￥{{item.vip_price}}</text>
         <!-- 商品数量加减  style='display:{{show_edit}}'-->
         <view style='display:{{show_edit}}'>
         <view class="carts-num">

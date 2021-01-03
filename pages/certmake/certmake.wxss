@@ -99,6 +99,15 @@ page {
     border-radius: 10rpx;
     padding-bottom: 20%;
 }
+.msg_vip_item {
+    display: flex;
+    color:orange;
+    justify-content: space-between;
+    margin: 0 20rpx;
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid #f3f3f3;
+    font-size: 32rpx;
+}
 .msg_item {
     display: flex;
     justify-content: space-between;

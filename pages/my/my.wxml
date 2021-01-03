@@ -5,6 +5,9 @@
         <image src="{{avatarUrl}}" style="width:66px;height:66px;border-radius:66%"></image>
       </view>
       <view class="login">
+        <view wx:if="{{ vip_flag }}" class="login_vip_1" bindtap="authorize">
+          Vip
+        </view>
         <view class="authorize" bindtap="authorize">{{nickName}}</view>
       </view>
     </view>
@@ -16,7 +19,7 @@
   <view class="hr"></view>
   <view class="category">
     <view class="category_item" wx:for="{{iconArray}}" wx:key="iconArray">
-      <view class="category_item_wrap" bindtap="onItemClick" id = "{{item.id}}">
+      <view wx:if="{{ item.show_flag == 1 }}" class="category_item_wrap" bindtap="onItemClick" id = "{{item.id}}">
         <view class="icon_wrap">
           <image src="{{item.iconUrl}}" class="index_icon"></image>
         </view>

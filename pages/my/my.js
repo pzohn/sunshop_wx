@@ -11,10 +11,12 @@ Page({
     wx_id:0,
     royalty:0,
     integral:0,
+    vip_flag:0,
     iconArray: [
       {
         "iconUrl": 'https://www.hattonstar.com/gfcamp/info.png',
         "iconText": '个人信息',
+        "show_flag" : 1,
         "id":1
       },
       // {
@@ -25,12 +27,20 @@ Page({
       {
         "iconUrl": '../../images/jifen.png',
         "iconText": '我的代金券',
+        "show_flag" : 1,
         "id": 3
       },
       {
         "iconUrl": '../../images/refund.png',
         "iconText": '我的退款',
+        "show_flag" : 1,
         "id": 4
+      },
+      {
+        "iconUrl": '../../images/vip.png',
+        "iconText": '成为会员',
+        "show_flag" : 1,
+        "id": 6
       },
       // {
       //   "iconUrl": 'https://www.hattonstar.com/gfcamp/card.png',
@@ -184,7 +194,15 @@ Page({
       this.listNew(3)
     } else if (index == 41) {
       this.listNew(4)
+    } else if (index == 6) {
+      this.tel();
     }
+  },
+
+  tel:function(){
+    wx.makePhoneCall({
+      phoneNumber: '18303741618' //仅为示例，并非真实的电话号码
+    })
   },
 
   onAddress: function () {
@@ -244,6 +262,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({vip_flag:app.globalData.vip_flag})
     var wxUserInfo = wx.getStorageSync('wxUserInfo');
     if (wxUserInfo.nickName == undefined) {
       app.globalData.authorizeFlag = false;

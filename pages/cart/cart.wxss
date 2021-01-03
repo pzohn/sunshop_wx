@@ -88,6 +88,14 @@ color:  #D66058;
 left: 280rpx;
 bottom: 20rpx;
 }
+
+.list_vip_price{
+  position: absolute;
+  font-size: 32rpx;
+  color:orange;
+  left: 400rpx;
+  bottom: 20rpx;
+  }
  
 /* 列表商品删除 */
 .list_del{

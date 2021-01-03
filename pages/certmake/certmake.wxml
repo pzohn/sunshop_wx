@@ -45,6 +45,10 @@
         <view>商品原价</view>
         <view>￥{{total_price}}</view>
     </view>
+    <view wx:if="{{ vip_flag }}" class="msg_vip_item">
+        <view>Vip价格</view>
+        <view>￥{{vip_price}}</view>
+    </view>
     <view class="msg_item">
         <view>配送费</view>
         <view>上门自取</view>

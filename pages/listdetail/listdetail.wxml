@@ -32,11 +32,9 @@
   </view>
 </view>
 
-
- 
 <view class="msg_list">
     <view class="msg_item">
-        <view>商品原价</view>
+        <view>实际价格</view>
         <view>￥{{total_price}}</view>
     </view>
     <view class="msg_item">

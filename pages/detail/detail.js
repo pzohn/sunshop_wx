@@ -3,6 +3,7 @@ Page({
   data: {
     isLike: true,
     price:0,
+    vip_price:0,
     stock:0,
     detail_id:0,
     iscollect: false,
@@ -97,6 +98,7 @@ Page({
           imgUrls: imgUrls,
           classInfo: classInfo,
           price: res.data.data.shopping.price,
+          vip_price: res.data.data.shopping.vip_price,
           gg_image: 'https://www.hattonstar.com/storage/' + res.data.data.shopping.title[0],
           stock: res.data.data.shopping.stock
         });

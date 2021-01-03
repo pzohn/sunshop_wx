@@ -20,6 +20,8 @@ App({
           method: 'POST',
           success: function (res) {
             that.globalData.wx_id = res.data.id;
+            that.globalData.vip_flag = res.data.vip_flag;
+            console.log(res.data.vip_flag)
             if (res.data.nikename != ""){
               var wxUserInfo = new Object();
               wxUserInfo.nickName = res.data.nikename;
@@ -141,6 +143,7 @@ App({
     index_style:'../index/index',
     fixed_address_flag:true,
     leasing_id: 0,
-    notice_flag:0
+    notice_flag:0,
+    vip_flag:0
   }
 })
